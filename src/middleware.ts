@@ -41,7 +41,8 @@ export default clerkMiddleware(async (auth, req: NextRequest) => {
     }
 
     // Check if user has admin role
-    if (sessionClaims?.metadata?.role !== 'admin') {
+    const metadata = sessionClaims?.metadata as { role?: string } | undefined
+    if (metadata?.role !== 'admin') {
       return NextResponse.redirect(new URL('/', req.url))
     }
   }

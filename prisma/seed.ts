@@ -10,7 +10,7 @@ async function main() {
   // ============================================
   console.log('Creating users...')
 
-  const adminUser = await prisma.user.upsert({
+  await prisma.user.upsert({
     where: { email: 'admin@swissdelight.com' },
     update: {},
     create: {
@@ -182,7 +182,7 @@ async function main() {
   })
 
   // Cupcakes
-  const vanillaCupcakes = await prisma.product.create({
+  await prisma.product.create({
     data: {
       slug: 'vanilla-cupcakes-box',
       sku: 'CUPC-VAN-006',
@@ -215,7 +215,7 @@ async function main() {
     },
   })
 
-  const redVelvetCupcakes = await prisma.product.create({
+  await prisma.product.create({
     data: {
       slug: 'red-velvet-cupcakes-box',
       sku: 'CUPC-RED-006',
@@ -249,7 +249,7 @@ async function main() {
   })
 
   // Cookies
-  const chocChipCookies = await prisma.product.create({
+  await prisma.product.create({
     data: {
       slug: 'chocolate-chip-cookies',
       sku: 'COOK-CHOC-012',
@@ -283,7 +283,7 @@ async function main() {
   })
 
   // Bread
-  const sourdoughBread = await prisma.product.create({
+  await prisma.product.create({
     data: {
       slug: 'artisan-sourdough-bread',
       sku: 'BREAD-SOUR-001',
