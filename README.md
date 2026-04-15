@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SwissDelight - Bakery E-commerce
 
-## Getting Started
+Tienda online moderna de pastelería/panadería construida con Next.js 15, inspirada en la plantilla SwissDelight.
 
-First, run the development server:
+## 🚀 Stack Tecnológico
+
+### Core
+- **Next.js 15** - React framework con App Router
+- **TypeScript** - 100% strict mode, sin `any`
+- **Tailwind CSS 4** - Sistema de diseño SwissDelight
+- **Prisma** - ORM para base de datos
+- **Supabase** - PostgreSQL + Storage
+
+### Autenticación y Pagos
+- **Clerk** - Autenticación (Email, Google, Facebook)
+- **Stripe** - Pagos multi-moneda (MXN, USD, EUR)
+
+### Estado y Data Fetching
+- **Zustand** - Estado global (UI, carrito)
+- **TanStack Query** - Server state management
+- **React Hook Form + Zod** - Formularios y validación
+
+### Internacionalización
+- **next-intl** - Soporte ES/EN
+
+## 🛠️ Scripts Disponibles
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev          # Servidor desarrollo
+npm run build        # Build producción
+npm run lint         # ESLint
+npm run test         # Playwright E2E
+npm run storybook    # Storybook docs
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚧 Roadmap
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### ✅ Fase 0: Setup (Completada)
+- Next.js 15 + TypeScript strict
+- Tailwind CSS con sistema de diseño
+- ESLint + Prettier + Husky
+- Storybook + Playwright
+- GitHub Actions CI/CD
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 🔄 Fase 1: Fundación (Siguiente)
+- Prisma + Supabase
+- Clerk + Stripe
+- React Query + Zustand
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Construido con ❤️ usando Next.js 15**
