@@ -5,8 +5,9 @@ import { stripe } from '@/lib/stripe/server'
 import { prisma } from '@/lib/prisma'
 import { PaymentStatus, OrderStatus } from '@/lib/generated/prisma'
 
-// Mark route as dynamic
+// Mark route as dynamic and use Node.js runtime
 export const dynamic = 'force-dynamic'
+export const runtime = 'nodejs'
 
 export async function POST(req: Request) {
   const body = await req.text()

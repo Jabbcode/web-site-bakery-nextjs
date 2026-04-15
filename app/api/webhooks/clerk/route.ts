@@ -4,8 +4,9 @@ import { WebhookEvent } from '@clerk/nextjs/server'
 import { prisma } from '@/lib/prisma'
 import { UserRole } from '@/lib/generated/prisma'
 
-// Mark route as dynamic
+// Mark route as dynamic and use Node.js runtime
 export const dynamic = 'force-dynamic'
+export const runtime = 'nodejs'
 
 export async function POST(req: Request) {
   const WEBHOOK_SECRET = process.env.CLERK_WEBHOOK_SECRET
