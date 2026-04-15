@@ -1,0 +1,354 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ============================================
+// ENUMS
+// ============================================
+
+enum ProductStatus {
+  ACTIVE
+  INACTIVE
+  OUT_OF_STOCK
+}
+
+enum StockStatus {
+  IN_STOCK
+  LOW_STOCK
+  OUT_OF_STOCK
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  FAILED
+  REFUNDED
+}
+
+enum PaymentMethod {
+  STRIPE
+  CARD
+}
+
+enum UserRole {
+  USER
+  ADMIN
+}
+
+// ============================================
+// USER & AUTH
+// ============================================
+
+model User {
+  id        String   @id @default(cuid())
+  clerkId   String   @unique // Clerk user ID
+  email     String   @unique
+  firstName String?
+  lastName  String?
+  role      UserRole @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  reviews   Review[]
+  orders    Order[]
+  addresses Address[]
+  carts     Cart[]
+
+  @@index([clerkId])
+  @@index([email])
+}
+
+// ============================================
+// PRODUCTS & CATEGORIES
+// ============================================
+
+model Category {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  name_es     String
+  name_en     String
+  description_es String?  @db.Text
+  description_en String?  @db.Text
+  image       String?
+  sortOrder   Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  products Product[]
+
+  @@index([slug])
+  @@index([isActive])
+}
+
+model Product {
+  id             String        @id @default(cuid())
+  slug           String        @unique
+  sku            String?       @unique
+  name_es        String
+  name_en        String
+  description_es String?       @db.Text
+  description_en String?       @db.Text
+
+  // Pricing (in cents, base currency USD)
+  priceUSD       Int           // Base price in cents
+  priceMXN       Int?          // Optional override, otherwise calculated
+  priceEUR       Int?          // Optional override, otherwise calculated
+
+  // Discount
+  discountPercent Int?         @default(0)
+  discountedPriceUSD Int?
+  discountedPriceMXN Int?
+  discountedPriceEUR Int?
+
+  // Inventory
+  stock          Int           @default(0)
+  stockStatus    StockStatus   @default(IN_STOCK)
+  lowStockThreshold Int        @default(5)
+
+  // Status
+  status         ProductStatus @default(ACTIVE)
+  isFeatured     Boolean       @default(false)
+  isNew          Boolean       @default(false)
+
+  // SEO
+  metaTitle_es   String?
+  metaTitle_en   String?
+  metaDescription_es String?
+  metaDescription_en String?
+
+  // Metadata
+  weight         Float?        // in grams
+  servings       Int?
+  preparationTime Int?         // in minutes
+
+  // Relations
+  categoryId     String
+  category       Category      @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  images         ProductImage[]
+  reviews        Review[]
+  cartItems      CartItem[]
+  orderItems     OrderItem[]
+
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  @@index([slug])
+  @@index([categoryId])
+  @@index([status])
+  @@index([isFeatured])
+  @@index([isNew])
+}
+
+model ProductImage {
+  id        String   @id @default(cuid())
+  url       String
+  alt_es    String?
+  alt_en    String?
+  sortOrder Int      @default(0)
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@index([productId])
+}
+
+// ============================================
+// REVIEWS
+// ============================================
+
+model Review {
+  id        String   @id @default(cuid())
+  rating    Int      // 1-5
+  title     String?
+  comment   String   @db.Text
+  isApproved Boolean @default(false)
+
+  // Relations
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([productId])
+  @@index([userId])
+  @@index([isApproved])
+  @@unique([userId, productId]) // One review per user per product
+}
+
+// ============================================
+// CART
+// ============================================
+
+model Cart {
+  id        String     @id @default(cuid())
+  userId    String?    @unique // Null for guest carts
+  user      User?      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sessionId String?    @unique // For guest carts
+  items     CartItem[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  @@index([userId])
+  @@index([sessionId])
+}
+
+model CartItem {
+  id        String   @id @default(cuid())
+  quantity  Int      @default(1)
+  cartId    String
+  cart      Cart     @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([cartId, productId]) // One product per cart
+  @@index([cartId])
+  @@index([productId])
+}
+
+// ============================================
+// ORDERS
+// ============================================
+
+model Order {
+  id              String        @id @default(cuid())
+  orderNumber     String        @unique
+
+  // User
+  userId          String
+  user            User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Billing
+  email           String
+  firstName       String
+  lastName        String
+  phone           String?
+
+  // Shipping Address
+  shippingStreet  String
+  shippingCity    String
+  shippingState   String?
+  shippingZip     String
+  shippingCountry String        @default("MX")
+
+  // Billing Address (optional, defaults to shipping)
+  billingStreet   String?
+  billingCity     String?
+  billingState    String?
+  billingZip      String?
+  billingCountry  String?
+
+  // Pricing (in cents)
+  currency        String        @default("USD") // USD, MXN, EUR
+  subtotal        Int           // In selected currency
+  tax             Int           @default(0)
+  shipping        Int           @default(0)
+  discount        Int           @default(0)
+  total           Int
+
+  // Status
+  orderStatus     OrderStatus   @default(PENDING)
+  paymentStatus   PaymentStatus @default(PENDING)
+  paymentMethod   PaymentMethod @default(STRIPE)
+
+  // Payment
+  stripePaymentIntentId String?  @unique
+  stripePaidAt          DateTime?
+
+  // Fulfillment
+  trackingNumber  String?
+  shippedAt       DateTime?
+  deliveredAt     DateTime?
+
+  // Notes
+  customerNotes   String?       @db.Text
+  adminNotes      String?       @db.Text
+
+  // Relations
+  items           OrderItem[]
+
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  @@index([userId])
+  @@index([orderNumber])
+  @@index([orderStatus])
+  @@index([paymentStatus])
+  @@index([stripePaymentIntentId])
+}
+
+model OrderItem {
+  id              String   @id @default(cuid())
+  quantity        Int
+
+  // Snapshot of product at order time
+  productName_es  String
+  productName_en  String
+  productSlug     String
+  productImage    String?
+
+  // Price snapshot (in order currency)
+  unitPrice       Int      // In cents
+  totalPrice      Int      // In cents (unitPrice * quantity)
+
+  // Relations
+  orderId         String
+  order           Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId       String   // Reference for analytics, not enforced FK
+  product         Product  @relation(fields: [productId], references: [id], onDelete: Restrict)
+
+  createdAt       DateTime @default(now())
+
+  @@index([orderId])
+  @@index([productId])
+}
+
+// ============================================
+// ADDRESSES
+// ============================================
+
+model Address {
+  id         String   @id @default(cuid())
+  firstName  String
+  lastName   String
+  phone      String?
+  street     String
+  city       String
+  state      String?
+  zip        String
+  country    String   @default("MX")
+  isDefault  Boolean  @default(false)
+
+  // Relations
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([userId])
+}

@@ -1,0 +1,113 @@
+{
+  "common": {
+    "home": "Inicio",
+    "shop": "Tienda",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "cart": "Carrito",
+    "account": "Cuenta",
+    "admin": "Admin",
+    "signIn": "Iniciar Sesión",
+    "signOut": "Cerrar Sesión",
+    "signUp": "Registrarse",
+    "search": "Buscar",
+    "currency": "Moneda",
+    "language": "Idioma"
+  },
+  "nav": {
+    "products": "Productos",
+    "categories": "Categorías",
+    "myAccount": "Mi Cuenta",
+    "orders": "Pedidos",
+    "addresses": "Direcciones",
+    "settings": "Configuración"
+  },
+  "products": {
+    "title": "Productos",
+    "allProducts": "Todos los Productos",
+    "featured": "Destacados",
+    "new": "Nuevos",
+    "onSale": "En Oferta",
+    "addToCart": "Agregar al Carrito",
+    "outOfStock": "Agotado",
+    "lowStock": "Pocas Unidades",
+    "reviews": "Reseñas",
+    "writeReview": "Escribir Reseña",
+    "description": "Descripción",
+    "details": "Detalles",
+    "relatedProducts": "Productos Relacionados"
+  },
+  "cart": {
+    "title": "Carrito de Compras",
+    "empty": "Tu carrito está vacío",
+    "subtotal": "Subtotal",
+    "tax": "Impuestos",
+    "shipping": "Envío",
+    "total": "Total",
+    "checkout": "Proceder al Pago",
+    "continueShopping": "Continuar Comprando",
+    "remove": "Eliminar",
+    "quantity": "Cantidad",
+    "update": "Actualizar"
+  },
+  "checkout": {
+    "title": "Finalizar Compra",
+    "billingDetails": "Detalles de Facturación",
+    "shippingAddress": "Dirección de Envío",
+    "paymentMethod": "Método de Pago",
+    "orderSummary": "Resumen del Pedido",
+    "placeOrder": "Realizar Pedido",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Correo Electrónico",
+    "phone": "Teléfono",
+    "address": "Dirección",
+    "city": "Ciudad",
+    "state": "Estado",
+    "zip": "Código Postal",
+    "country": "País"
+  },
+  "orders": {
+    "title": "Mis Pedidos",
+    "orderNumber": "Número de Pedido",
+    "date": "Fecha",
+    "status": "Estado",
+    "total": "Total",
+    "viewDetails": "Ver Detalles",
+    "pending": "Pendiente",
+    "confirmed": "Confirmado",
+    "processing": "En Proceso",
+    "shipped": "Enviado",
+    "delivered": "Entregado",
+    "cancelled": "Cancelado"
+  },
+  "admin": {
+    "dashboard": "Panel de Control",
+    "products": "Productos",
+    "categories": "Categorías",
+    "orders": "Pedidos",
+    "reviews": "Reseñas",
+    "settings": "Configuración",
+    "addProduct": "Agregar Producto",
+    "editProduct": "Editar Producto",
+    "deleteProduct": "Eliminar Producto",
+    "save": "Guardar",
+    "cancel": "Cancelar"
+  },
+  "footer": {
+    "aboutUs": "Sobre Nosotros",
+    "contactUs": "Contáctanos",
+    "termsOfService": "Términos de Servicio",
+    "privacyPolicy": "Política de Privacidad",
+    "followUs": "Síguenos",
+    "newsletter": "Boletín",
+    "subscribeNewsletter": "Suscríbete a nuestro boletín",
+    "copyright": "© 2024 SwissDelight. Todos los derechos reservados."
+  },
+  "errors": {
+    "404": "Página no encontrada",
+    "500": "Error del servidor",
+    "somethingWentWrong": "Algo salió mal",
+    "tryAgain": "Intentar de nuevo"
+  }
+}
