@@ -41,6 +41,8 @@ const eslintConfig = defineConfig([...nextVitals, ...nextTs, {
   'node_modules/**',
   '.storybook/**',
   'storybook-static/**',
+  'lib/generated/**',
+  'prisma/migrations/**',
 ]), ...storybook.configs["flat/recommended"]])
 
 export default eslintConfig

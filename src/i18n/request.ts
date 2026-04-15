@@ -1,6 +1,15 @@
 import { getRequestConfig } from 'next-intl/server'
 import { routing } from './routing'
 
+// Import messages statically
+import esMessages from '../../public/locales/es.json'
+import enMessages from '../../public/locales/en.json'
+
+const messages = {
+  es: esMessages,
+  en: enMessages,
+}
+
 export default getRequestConfig(async ({ requestLocale }) => {
   // This typically corresponds to the `[locale]` segment
   let locale = await requestLocale
@@ -12,11 +21,6 @@ export default getRequestConfig(async ({ requestLocale }) => {
 
   return {
     locale,
-    messages: (
-      await import(`../../../public/locales/${locale}.json`, {
-        // @ts-expect-error - Next.js supports this
-        assert: { type: 'json' },
-      })
-    ).default,
+    messages: messages[locale as keyof typeof messages],
   }
 })
