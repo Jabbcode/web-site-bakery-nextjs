@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { Cormorant, Heebo } from 'next/font/google'
+import { ClerkProvider } from '@clerk/nextjs'
+import { Providers } from './providers'
 import './globals.css'
 
 const cormorant = Cormorant({
@@ -27,8 +29,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${heebo.variable}`}>
-      <body>{children}</body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" className={`${cormorant.variable} ${heebo.variable}`}>
+        <body>
+          <Providers>{children}</Providers>
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }
