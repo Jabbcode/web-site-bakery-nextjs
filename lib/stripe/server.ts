@@ -85,9 +85,7 @@ export async function updatePaymentIntent(
 /**
  * Cancel a payment intent
  */
-export async function cancelPaymentIntent(
-  paymentIntentId: string
-): Promise<Stripe.PaymentIntent> {
+export async function cancelPaymentIntent(paymentIntentId: string): Promise<Stripe.PaymentIntent> {
   return await stripe.paymentIntents.cancel(paymentIntentId)
 }
 

@@ -148,10 +148,8 @@ async function main() {
       sku: 'CAKE-STRW-001',
       name_es: 'Pastel de Fresa Ensueño',
       name_en: 'Strawberry Dream Cake',
-      description_es:
-        'Esponjoso pastel de vainilla con fresas frescas y crema chantilly.',
-      description_en:
-        'Fluffy vanilla cake with fresh strawberries and whipped cream.',
+      description_es: 'Esponjoso pastel de vainilla con fresas frescas y crema chantilly.',
+      description_en: 'Fluffy vanilla cake with fresh strawberries and whipped cream.',
       priceUSD: 4200,
       priceMXN: 84000,
       priceEUR: 3900,
@@ -338,7 +336,7 @@ async function main() {
     data: {
       rating: 5,
       title: 'Perfect for birthdays',
-      comment: 'Ordered this for my daughter\'s birthday and everyone loved it!',
+      comment: "Ordered this for my daughter's birthday and everyone loved it!",
       isApproved: true,
       userId: testUser.id,
       productId: strawberryCake.id,

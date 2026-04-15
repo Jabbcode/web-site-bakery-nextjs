@@ -5,6 +5,9 @@ import { stripe } from '@/lib/stripe/server'
 import { prisma } from '@/lib/prisma'
 import { PaymentStatus, OrderStatus } from '@/lib/generated/prisma'
 
+// Mark route as dynamic
+export const dynamic = 'force-dynamic'
+
 export async function POST(req: Request) {
   const body = await req.text()
   const signature = (await headers()).get('stripe-signature')
@@ -90,9 +93,6 @@ export async function POST(req: Request) {
     return NextResponse.json({ received: true })
   } catch (error) {
     console.error('Error processing webhook:', error)
-    return NextResponse.json(
-      { error: 'Webhook handler failed' },
-      { status: 500 }
-    )
+    return NextResponse.json({ error: 'Webhook handler failed' }, { status: 500 })
   }
 }

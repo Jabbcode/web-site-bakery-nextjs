@@ -6,16 +6,12 @@ export function createServiceClient() {
     throw new Error('Missing Supabase environment variables')
   }
 
-  return createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL,
-    process.env.SUPABASE_SERVICE_ROLE_KEY,
-    {
-      auth: {
-        autoRefreshToken: false,
-        persistSession: false,
-      },
-    }
-  )
+  return createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, {
+    auth: {
+      autoRefreshToken: false,
+      persistSession: false,
+    },
+  })
 }
 
 /**
@@ -25,11 +21,7 @@ export function createServiceClient() {
  * @param file - The file to upload
  * @returns The public URL of the uploaded file
  */
-export async function uploadFile(
-  bucket: string,
-  path: string,
-  file: File | Blob
-): Promise<string> {
+export async function uploadFile(bucket: string, path: string, file: File | Blob): Promise<string> {
   const supabase = createServiceClient()
 
   const { data, error } = await supabase.storage.from(bucket).upload(path, file, {

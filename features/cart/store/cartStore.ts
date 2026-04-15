@@ -35,9 +35,7 @@ export const useCartStore = create<CartState>()(
             // Update quantity if item already exists
             return {
               items: state.items.map((i) =>
-                i.productId === item.productId
-                  ? { ...i, quantity: i.quantity + item.quantity }
-                  : i
+                i.productId === item.productId ? { ...i, quantity: i.quantity + item.quantity } : i
               ),
             }
           }
@@ -68,11 +66,8 @@ export const useCartStore = create<CartState>()(
       getTotal: (currency) => {
         const state = get()
         return state.items.reduce((total, item) => {
-          const price = currency === 'USD'
-            ? item.priceUSD
-            : currency === 'MXN'
-            ? item.priceMXN
-            : item.priceEUR
+          const price =
+            currency === 'USD' ? item.priceUSD : currency === 'MXN' ? item.priceMXN : item.priceEUR
           return total + price * item.quantity
         }, 0)
       },
