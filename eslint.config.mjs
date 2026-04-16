@@ -48,6 +48,8 @@ const eslintConfig = defineConfig([
     'storybook-static/**',
     'lib/generated/**',
     'prisma/migrations/**',
+    'tests/e2e/**',
+    'playwright.config.ts',
   ]),
   ...storybook.configs['flat/recommended'],
 ])
