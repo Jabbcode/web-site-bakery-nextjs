@@ -25,8 +25,6 @@ test.describe('Products Flow', () => {
     // Wait for products to load
     await page.waitForSelector('[data-testid="product-card"]')
 
-    const initialProductCount = await page.locator('[data-testid="product-card"]').count()
-
     // Click on first category filter
     await page
       .getByRole('button', { name: /chocolate cakes/i })
