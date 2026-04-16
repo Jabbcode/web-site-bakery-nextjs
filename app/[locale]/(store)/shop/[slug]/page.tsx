@@ -17,15 +17,16 @@ import { QuantitySelector } from '@/components/molecules/QuantitySelector'
 import { Button } from '@/components/atoms/Button'
 import { Badge } from '@/components/atoms/Badge'
 import { Spinner } from '@/components/atoms/Spinner'
+import { ReviewList } from '@/features/reviews/components/ReviewList'
 import { ShoppingCart, Heart } from 'lucide-react'
 import { useState } from 'react'
 
 interface PageProps {
-  params: Promise<{ slug: string }>
+  params: Promise<{ locale: string; slug: string }>
 }
 
 export default function ProductPage({ params }: PageProps) {
-  const { slug } = use(params)
+  const { locale, slug } = use(params)
   const { data: product, isLoading } = useProduct(slug)
   const [quantity, setQuantity] = useState(1)
 
@@ -109,15 +110,7 @@ export default function ProductPage({ params }: PageProps) {
     {
       id: 'reviews',
       label: `Reviews (${product.reviewCount})`,
-      content: (
-        <div className="space-y-6">
-          {product.reviewCount === 0 ? (
-            <p className="font-body text-[15px] text-[#63605a]">No reviews yet.</p>
-          ) : (
-            <p className="font-body text-[15px] text-[#63605a]">Reviews component coming soon...</p>
-          )}
-        </div>
-      ),
+      content: <ReviewList productId={product.id} locale={locale} />,
     },
   ]
 
