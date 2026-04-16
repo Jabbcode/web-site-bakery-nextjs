@@ -45,8 +45,8 @@ describe('Button', () => {
     const { rerender } = render(<Button variant="primary">Primary</Button>)
     expect(screen.getByRole('button')).toHaveClass('bg-dark')
 
-    rerender(<Button variant="outline">Outline</Button>)
-    expect(screen.getByRole('button')).toHaveClass('border-2')
+    rerender(<Button variant="secondary">Secondary</Button>)
+    expect(screen.getByRole('button')).toHaveClass('border')
   })
 
   it('applies size classes correctly', () => {

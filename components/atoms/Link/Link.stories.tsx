@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { Link } from './Link'
 
 const meta = {
@@ -74,6 +74,10 @@ export const External: Story = {
 }
 
 export const AllVariants: Story = {
+  args: {
+    href: '#',
+    children: 'Link',
+  },
   render: () => (
     <div className="flex flex-col gap-8 p-8">
       <div>
@@ -138,6 +142,10 @@ export const AllVariants: Story = {
 }
 
 export const Footer: Story = {
+  args: {
+    href: '#',
+    children: 'Link',
+  },
   render: () => (
     <footer className="bg-[#fcf8ed] p-8">
       <div className="flex flex-col gap-6">

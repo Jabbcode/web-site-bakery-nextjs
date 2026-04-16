@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { Select } from './Select'
 
 const meta = {
@@ -66,6 +66,9 @@ export const Disabled: Story = {
 }
 
 export const AllVariants: Story = {
+  args: {
+    options: defaultOptions,
+  },
   render: () => (
     <div className="flex flex-col gap-6 max-w-md">
       <Select label="Default" options={defaultOptions} />

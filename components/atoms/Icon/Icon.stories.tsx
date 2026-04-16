@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import {
   Heart,
   ShoppingCart,
@@ -70,6 +70,9 @@ export const Large: Story = {
 }
 
 export const AllSizes: Story = {
+  args: {
+    icon: Heart,
+  },
   render: () => (
     <div className="flex items-end gap-6">
       <div className="flex flex-col items-center gap-2">
@@ -97,6 +100,9 @@ export const AllSizes: Story = {
 }
 
 export const AllVariants: Story = {
+  args: {
+    icon: Heart,
+  },
   render: () => (
     <div className="flex flex-col gap-8 p-8">
       <div>
