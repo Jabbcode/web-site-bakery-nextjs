@@ -142,12 +142,7 @@ export const ProductCard = ({
         )}
 
         {/* Price */}
-        <ProductPrice
-          price={price}
-          originalPrice={originalPrice}
-          currency={currency}
-          size="md"
-        />
+        <ProductPrice price={price} originalPrice={originalPrice} currency={currency} size="md" />
 
         {/* Out of Stock Message */}
         {!inStock && (
