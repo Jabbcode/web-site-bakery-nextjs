@@ -82,7 +82,7 @@ export const QuantitySelector = ({
           'hover:bg-[#fafafa]',
           'disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-transparent'
         )}
-        aria-label="Decrease quantity"
+        aria-label="Decrement quantity"
       >
         <Minus className="h-4 w-4 text-[#241c10]" />
       </button>
@@ -113,7 +113,7 @@ export const QuantitySelector = ({
           'hover:bg-[#fafafa]',
           'disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-transparent'
         )}
-        aria-label="Increase quantity"
+        aria-label="Increment quantity"
       >
         <Plus className="h-4 w-4 text-[#241c10]" />
       </button>

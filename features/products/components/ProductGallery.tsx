@@ -52,7 +52,7 @@ export const ProductGallery = ({ images, productName, className }: ProductGaller
   }
 
   return (
-    <div className={cn('space-y-4', className)}>
+    <div className={cn('space-y-4', className)} data-testid="product-gallery">
       {/* Main Image */}
       <div className="group relative aspect-square overflow-hidden bg-[#fcf8ed]">
         <Image

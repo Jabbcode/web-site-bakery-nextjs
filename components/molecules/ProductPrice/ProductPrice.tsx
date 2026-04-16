@@ -61,7 +61,7 @@ export const ProductPrice = ({
   const discountPercentage = hasDiscount ? calculateDiscount(originalPrice, price) : 0
 
   return (
-    <div className={cn('flex items-center gap-3', className)}>
+    <div className={cn('flex items-center gap-3', className)} data-testid="product-price">
       <span className={cn(priceVariants({ size, variant: hasDiscount ? 'accent' : variant }))}>
         {showCurrency ? formatPrice(price, currency) : price.toFixed(2)}
       </span>

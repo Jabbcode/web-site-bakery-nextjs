@@ -62,6 +62,7 @@ export const ProductCard = ({
   return (
     <Link
       href={`/shop/${slug}`}
+      data-testid="product-card"
       className={cn(
         'group relative block overflow-hidden bg-white transition-shadow duration-300',
         'hover:shadow-card',
