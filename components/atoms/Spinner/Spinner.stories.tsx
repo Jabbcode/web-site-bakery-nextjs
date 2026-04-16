@@ -67,7 +67,7 @@ export const AllVariants: Story = {
   render: () => (
     <div className="flex flex-col gap-8 p-8">
       <div>
-        <h3 className="mb-4 text-sm font-medium text-dark">Sizes</h3>
+        <h3 className="text-dark mb-4 text-sm font-medium">Sizes</h3>
         <div className="flex items-center gap-6">
           <Spinner size="sm" />
           <Spinner size="md" />
@@ -75,7 +75,7 @@ export const AllVariants: Story = {
         </div>
       </div>
       <div>
-        <h3 className="mb-4 text-sm font-medium text-dark">Variants</h3>
+        <h3 className="text-dark mb-4 text-sm font-medium">Variants</h3>
         <div className="flex items-center gap-6">
           <Spinner variant="primary" />
           <Spinner variant="dark" />
@@ -84,13 +84,13 @@ export const AllVariants: Story = {
         </div>
       </div>
       <div>
-        <h3 className="mb-4 text-sm font-medium text-dark">In Context</h3>
+        <h3 className="text-dark mb-4 text-sm font-medium">In Context</h3>
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-2">
             <Spinner size="sm" />
             <span className="text-text">Loading...</span>
           </div>
-          <div className="flex h-32 w-64 items-center justify-center bg-cream">
+          <div className="bg-cream flex h-32 w-64 items-center justify-center">
             <Spinner />
           </div>
         </div>

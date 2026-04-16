@@ -14,8 +14,8 @@ export const Tag = forwardRef<HTMLAnchorElement, TagProps>(
         ref={ref}
         className={cn(
           // EXACTO SwissDelight .widget .tagcloud a
-          'relative inline-block align-top font-display text-[18px] font-medium italic leading-[1em] capitalize tracking-[0.01em] mr-[13px] mb-[11px] transition-colors duration-200 hover:text-dark',
-          'after:content-["/"] after:relative after:right-[-7px]',
+          'font-display hover:text-dark relative mr-[13px] mb-[11px] inline-block align-top text-[18px] leading-[1em] font-medium tracking-[0.01em] capitalize italic transition-colors duration-200',
+          'after:relative after:right-[-7px] after:content-["/"]',
           !showSeparator && 'after:hidden',
           className
         )}

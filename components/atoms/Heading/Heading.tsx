@@ -25,8 +25,7 @@ const headingVariants = cva(
 )
 
 export interface HeadingProps
-  extends HTMLAttributes<HTMLHeadingElement>,
-    VariantProps<typeof headingVariants> {
+  extends HTMLAttributes<HTMLHeadingElement>, VariantProps<typeof headingVariants> {
   as?: ElementType
 }
 

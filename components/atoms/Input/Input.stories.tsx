@@ -93,9 +93,9 @@ export const Large: Story = {
 
 export const AllVariants: Story = {
   render: () => (
-    <div className="flex flex-col gap-6 max-w-md">
+    <div className="flex max-w-md flex-col gap-6">
       <div>
-        <h3 className="mb-4 text-sm font-medium text-dark">States</h3>
+        <h3 className="text-dark mb-4 text-sm font-medium">States</h3>
         <div className="flex flex-col gap-4">
           <Input label="Default" placeholder="Enter text..." />
           <Input label="With Helper" placeholder="Enter text..." helperText="This is helper text" />
@@ -105,7 +105,7 @@ export const AllVariants: Story = {
         </div>
       </div>
       <div>
-        <h3 className="mb-4 text-sm font-medium text-dark">Sizes</h3>
+        <h3 className="text-dark mb-4 text-sm font-medium">Sizes</h3>
         <div className="flex flex-col gap-4">
           <Input label="Small" placeholder="Small input" size="sm" />
           <Input label="Medium" placeholder="Medium input" size="md" />

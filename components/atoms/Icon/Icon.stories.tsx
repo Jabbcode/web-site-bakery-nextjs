@@ -77,23 +77,23 @@ export const AllSizes: Story = {
     <div className="flex items-end gap-6">
       <div className="flex flex-col items-center gap-2">
         <Icon icon={Heart} size="xs" />
-        <span className="text-xs text-text">xs</span>
+        <span className="text-text text-xs">xs</span>
       </div>
       <div className="flex flex-col items-center gap-2">
         <Icon icon={Heart} size="sm" />
-        <span className="text-xs text-text">sm</span>
+        <span className="text-text text-xs">sm</span>
       </div>
       <div className="flex flex-col items-center gap-2">
         <Icon icon={Heart} size="md" />
-        <span className="text-xs text-text">md</span>
+        <span className="text-text text-xs">md</span>
       </div>
       <div className="flex flex-col items-center gap-2">
         <Icon icon={Heart} size="lg" />
-        <span className="text-xs text-text">lg</span>
+        <span className="text-text text-xs">lg</span>
       </div>
       <div className="flex flex-col items-center gap-2">
         <Icon icon={Heart} size="xl" />
-        <span className="text-xs text-text">xl</span>
+        <span className="text-text text-xs">xl</span>
       </div>
     </div>
   ),
@@ -106,40 +106,40 @@ export const AllVariants: Story = {
   render: () => (
     <div className="flex flex-col gap-8 p-8">
       <div>
-        <h3 className="mb-4 text-sm font-medium text-dark">Color Variants</h3>
+        <h3 className="text-dark mb-4 text-sm font-medium">Color Variants</h3>
         <div className="flex flex-wrap gap-6">
           <div className="flex flex-col items-center gap-2">
             <Icon icon={Heart} variant="default" />
-            <span className="text-xs text-text">default</span>
+            <span className="text-text text-xs">default</span>
           </div>
           <div className="flex flex-col items-center gap-2">
             <Icon icon={Heart} variant="primary" />
-            <span className="text-xs text-text">primary</span>
+            <span className="text-text text-xs">primary</span>
           </div>
           <div className="flex flex-col items-center gap-2">
             <Icon icon={Heart} variant="dark" />
-            <span className="text-xs text-text">dark</span>
+            <span className="text-text text-xs">dark</span>
           </div>
           <div className="flex flex-col items-center gap-2">
             <Icon icon={Heart} variant="text" />
-            <span className="text-xs text-text">text</span>
+            <span className="text-text text-xs">text</span>
           </div>
           <div className="flex flex-col items-center gap-2">
             <Icon icon={Heart} variant="accent" />
-            <span className="text-xs text-text">accent</span>
+            <span className="text-text text-xs">accent</span>
           </div>
           <div className="flex flex-col items-center gap-2">
             <Icon icon={Heart} variant="gold" />
-            <span className="text-xs text-text">gold</span>
+            <span className="text-text text-xs">gold</span>
           </div>
           <div className="flex flex-col items-center gap-2">
             <Icon icon={Heart} variant="light" />
-            <span className="text-xs text-text">light</span>
+            <span className="text-text text-xs">light</span>
           </div>
         </div>
       </div>
       <div>
-        <h3 className="mb-4 text-sm font-medium text-dark">Common Icons</h3>
+        <h3 className="text-dark mb-4 text-sm font-medium">Common Icons</h3>
         <div className="flex flex-wrap gap-6">
           <Icon icon={Heart} size="lg" variant="accent" label="Favorite" />
           <Icon icon={ShoppingCart} size="lg" variant="dark" label="Cart" />
@@ -154,13 +154,13 @@ export const AllVariants: Story = {
         </div>
       </div>
       <div>
-        <h3 className="mb-4 text-sm font-medium text-dark">In Context</h3>
+        <h3 className="text-dark mb-4 text-sm font-medium">In Context</h3>
         <div className="flex flex-col gap-4">
-          <button className="inline-flex items-center gap-2 text-dark hover:text-accent">
+          <button className="text-dark hover:text-accent inline-flex items-center gap-2">
             <Icon icon={Heart} size="sm" />
             <span>Add to Wishlist</span>
           </button>
-          <button className="inline-flex items-center gap-2 rounded border border-gray-300 px-4 py-2 text-dark hover:bg-gray-50">
+          <button className="text-dark inline-flex items-center gap-2 rounded border border-gray-300 px-4 py-2 hover:bg-gray-50">
             <Icon icon={ShoppingCart} size="sm" />
             <span>Add to Cart</span>
           </button>
@@ -170,7 +170,7 @@ export const AllVariants: Story = {
             <Icon icon={Star} size="sm" variant="gold" />
             <Icon icon={Star} size="sm" variant="gold" />
             <Icon icon={Star} size="sm" variant="light" />
-            <span className="ml-2 text-sm text-text">4.0</span>
+            <span className="text-text ml-2 text-sm">4.0</span>
           </div>
         </div>
       </div>

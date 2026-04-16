@@ -81,7 +81,7 @@ export const AllVariants: Story = {
   render: () => (
     <div className="flex flex-col gap-8 p-8">
       <div>
-        <h3 className="mb-4 text-sm font-medium text-dark">Variants</h3>
+        <h3 className="text-dark mb-4 text-sm font-medium">Variants</h3>
         <div className="flex flex-col gap-3">
           <Link href="#" variant="default">
             Default Link (dark → accent on hover)
@@ -104,7 +104,7 @@ export const AllVariants: Story = {
         </div>
       </div>
       <div>
-        <h3 className="mb-4 text-sm font-medium text-dark">In Context</h3>
+        <h3 className="text-dark mb-4 text-sm font-medium">In Context</h3>
         <div className="flex flex-col gap-4">
           <p className="text-text">
             This is a paragraph with an{' '}
@@ -150,7 +150,7 @@ export const Footer: Story = {
     <footer className="bg-[#fcf8ed] p-8">
       <div className="flex flex-col gap-6">
         <div>
-          <h4 className="mb-3 font-display text-lg font-medium text-dark">Quick Links</h4>
+          <h4 className="font-display text-dark mb-3 text-lg font-medium">Quick Links</h4>
           <div className="flex flex-col gap-2">
             <Link href="/about" variant="light">
               About Us

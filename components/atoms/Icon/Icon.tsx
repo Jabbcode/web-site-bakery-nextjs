@@ -32,8 +32,7 @@ const iconVariants = cva('inline-block flex-shrink-0', {
 })
 
 export interface IconProps
-  extends Omit<SVGProps<SVGSVGElement>, 'ref'>,
-    VariantProps<typeof iconVariants> {
+  extends Omit<SVGProps<SVGSVGElement>, 'ref'>, VariantProps<typeof iconVariants> {
   icon: LucideIcon
   label?: string
 }

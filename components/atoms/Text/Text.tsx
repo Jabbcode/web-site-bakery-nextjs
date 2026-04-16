@@ -29,8 +29,7 @@ const textVariants = cva(
 )
 
 export interface TextProps
-  extends HTMLAttributes<HTMLParagraphElement>,
-    VariantProps<typeof textVariants> {
+  extends HTMLAttributes<HTMLParagraphElement>, VariantProps<typeof textVariants> {
   as?: ElementType
 }
 

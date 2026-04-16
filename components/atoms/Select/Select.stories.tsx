@@ -70,7 +70,7 @@ export const AllVariants: Story = {
     options: defaultOptions,
   },
   render: () => (
-    <div className="flex flex-col gap-6 max-w-md">
+    <div className="flex max-w-md flex-col gap-6">
       <Select label="Default" options={defaultOptions} />
       <Select
         label="With Helper"

@@ -74,24 +74,24 @@ export const AllVariants: Story = {
   render: () => (
     <div className="max-w-2xl space-y-6">
       <div>
-        <h3 className="mb-2 text-sm font-medium text-dark">Body (Default)</h3>
+        <h3 className="text-dark mb-2 text-sm font-medium">Body (Default)</h3>
         <Text variant="body">{loremText}</Text>
-        <p className="text-sm text-text/70">15px, line-height 1.66em, Heebo</p>
+        <p className="text-text/70 text-sm">15px, line-height 1.66em, Heebo</p>
       </div>
       <div>
-        <h3 className="mb-2 text-sm font-medium text-dark">Small</h3>
+        <h3 className="text-dark mb-2 text-sm font-medium">Small</h3>
         <Text variant="small">{loremText}</Text>
-        <p className="text-sm text-text/70">14px, Heebo</p>
+        <p className="text-text/70 text-sm">14px, Heebo</p>
       </div>
       <div>
-        <h3 className="mb-2 text-sm font-medium text-dark">Large</h3>
+        <h3 className="text-dark mb-2 text-sm font-medium">Large</h3>
         <Text variant="large">{loremText}</Text>
-        <p className="text-sm text-text/70">18px, Heebo</p>
+        <p className="text-text/70 text-sm">18px, Heebo</p>
       </div>
       <div>
-        <h3 className="mb-2 text-sm font-medium text-dark">Muted</h3>
+        <h3 className="text-dark mb-2 text-sm font-medium">Muted</h3>
         <Text variant="muted">{loremText}</Text>
-        <p className="text-sm text-text/70">15px, 70% opacity</p>
+        <p className="text-text/70 text-sm">15px, 70% opacity</p>
       </div>
     </div>
   ),

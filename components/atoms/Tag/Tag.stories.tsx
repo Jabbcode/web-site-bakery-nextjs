@@ -52,7 +52,7 @@ export const Categories: Story = {
   render: () => (
     <div className="flex flex-col gap-6">
       <div>
-        <h3 className="mb-4 text-sm font-medium text-dark">Product Categories</h3>
+        <h3 className="text-dark mb-4 text-sm font-medium">Product Categories</h3>
         <div>
           <Tag href="#">Cakes</Tag>
           <Tag href="#">Chocolates</Tag>
@@ -63,7 +63,7 @@ export const Categories: Story = {
         </div>
       </div>
       <div>
-        <h3 className="mb-4 text-sm font-medium text-dark">Popular Tags</h3>
+        <h3 className="text-dark mb-4 text-sm font-medium">Popular Tags</h3>
         <div>
           <Tag href="#">Birthday</Tag>
           <Tag href="#">Wedding</Tag>

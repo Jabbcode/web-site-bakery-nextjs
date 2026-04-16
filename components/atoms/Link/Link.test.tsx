@@ -33,15 +33,27 @@ describe('Link', () => {
   })
 
   it('applies variant styles correctly', () => {
-    const { rerender } = render(<Link href="#" variant="default">Default</Link>)
+    const { rerender } = render(
+      <Link href="#" variant="default">
+        Default
+      </Link>
+    )
     expect(screen.getByText('Default')).toHaveClass('text-dark')
 
-    rerender(<Link href="#" variant="accent">Accent</Link>)
+    rerender(
+      <Link href="#" variant="accent">
+        Accent
+      </Link>
+    )
     expect(screen.getByText('Accent')).toHaveClass('text-accent')
   })
 
   it('applies nav variant with uppercase', () => {
-    render(<Link href="#" variant="nav">Nav Link</Link>)
+    render(
+      <Link href="#" variant="nav">
+        Nav Link
+      </Link>
+    )
     expect(screen.getByText('Nav Link')).toHaveClass('uppercase')
   })
 
@@ -56,7 +68,11 @@ describe('Link', () => {
   })
 
   it('merges custom className', () => {
-    render(<Link href="#" className="custom-class">Link</Link>)
+    render(
+      <Link href="#" className="custom-class">
+        Link
+      </Link>
+    )
     expect(screen.getByText('Link')).toHaveClass('custom-class')
   })
 })

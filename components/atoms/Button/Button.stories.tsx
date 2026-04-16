@@ -133,7 +133,7 @@ export const AllVariants: Story = {
   render: () => (
     <div className="flex flex-col gap-6 p-8">
       <div>
-        <h3 className="mb-4 text-sm font-medium text-dark">Variants</h3>
+        <h3 className="text-dark mb-4 text-sm font-medium">Variants</h3>
         <div className="flex flex-wrap gap-3">
           <Button variant="default">Default</Button>
           <Button variant="primary">Primary</Button>
@@ -143,7 +143,7 @@ export const AllVariants: Story = {
         </div>
       </div>
       <div>
-        <h3 className="mb-4 text-sm font-medium text-dark">Sizes</h3>
+        <h3 className="text-dark mb-4 text-sm font-medium">Sizes</h3>
         <div className="flex items-center gap-3">
           <Button size="sm">Small</Button>
           <Button size="md">Medium</Button>
@@ -151,7 +151,7 @@ export const AllVariants: Story = {
         </div>
       </div>
       <div>
-        <h3 className="mb-4 text-sm font-medium text-dark">States</h3>
+        <h3 className="text-dark mb-4 text-sm font-medium">States</h3>
         <div className="flex gap-3">
           <Button isLoading>Loading</Button>
           <Button disabled>Disabled</Button>

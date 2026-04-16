@@ -30,8 +30,7 @@ const spinnerVariants = cva(
 )
 
 export interface SpinnerProps
-  extends Omit<HTMLAttributes<HTMLDivElement>, 'children'>,
-    VariantProps<typeof spinnerVariants> {
+  extends Omit<HTMLAttributes<HTMLDivElement>, 'children'>, VariantProps<typeof spinnerVariants> {
   label?: string
 }
 

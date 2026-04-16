@@ -39,7 +39,7 @@ export const Rectangle: Story = {
 
 export const Text: Story = {
   render: () => (
-    <div className="flex flex-col gap-2 max-w-md">
+    <div className="flex max-w-md flex-col gap-2">
       <Skeleton className="h-4 w-full" />
       <Skeleton className="h-4 w-5/6" />
       <Skeleton className="h-4 w-4/6" />
@@ -49,7 +49,7 @@ export const Text: Story = {
 
 export const ProductCard: Story = {
   render: () => (
-    <div className="w-64 space-y-4 rounded border border-border p-4">
+    <div className="border-border w-64 space-y-4 rounded border p-4">
       <Skeleton className="h-48 w-full" />
       <Skeleton className="h-6 w-3/4" />
       <Skeleton className="h-4 w-1/2" />
@@ -63,9 +63,9 @@ export const ProductCard: Story = {
 
 export const AllVariants: Story = {
   render: () => (
-    <div className="flex flex-col gap-6 max-w-2xl">
+    <div className="flex max-w-2xl flex-col gap-6">
       <div>
-        <h3 className="mb-4 text-sm font-medium text-dark">Variants</h3>
+        <h3 className="text-dark mb-4 text-sm font-medium">Variants</h3>
         <div className="flex flex-col gap-2">
           <Skeleton variant="default" className="h-4 w-64" />
           <Skeleton variant="light" className="h-4 w-64" />
@@ -73,7 +73,7 @@ export const AllVariants: Story = {
         </div>
       </div>
       <div>
-        <h3 className="mb-4 text-sm font-medium text-dark">Shapes</h3>
+        <h3 className="text-dark mb-4 text-sm font-medium">Shapes</h3>
         <div className="flex gap-4">
           <Skeleton className="h-12 w-12 rounded-full" />
           <Skeleton className="h-12 w-32" />
@@ -81,7 +81,7 @@ export const AllVariants: Story = {
         </div>
       </div>
       <div>
-        <h3 className="mb-4 text-sm font-medium text-dark">Product Grid</h3>
+        <h3 className="text-dark mb-4 text-sm font-medium">Product Grid</h3>
         <div className="grid grid-cols-3 gap-4">
           {[1, 2, 3].map((i) => (
             <div key={i} className="space-y-2">

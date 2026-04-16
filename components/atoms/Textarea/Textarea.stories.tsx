@@ -60,7 +60,7 @@ export const Disabled: Story = {
 
 export const AllVariants: Story = {
   render: () => (
-    <div className="flex flex-col gap-6 max-w-md">
+    <div className="flex max-w-md flex-col gap-6">
       <Textarea label="Default" placeholder="Enter your message..." />
       <Textarea
         label="With Helper"

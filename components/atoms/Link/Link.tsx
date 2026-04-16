@@ -26,7 +26,8 @@ const linkVariants = cva(
 )
 
 export interface LinkProps
-  extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof NextLinkProps>,
+  extends
+    Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof NextLinkProps>,
     Omit<NextLinkProps, 'as' | 'passHref'>,
     VariantProps<typeof linkVariants> {
   external?: boolean

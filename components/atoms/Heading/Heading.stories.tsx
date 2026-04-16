@@ -66,27 +66,27 @@ export const AllVariants: Story = {
     <div className="max-w-4xl space-y-8">
       <div>
         <Heading variant="h1">Heading 1 - Swiss Delight</Heading>
-        <p className="text-sm text-text/70">78px, font-light, Cormorant</p>
+        <p className="text-text/70 text-sm">78px, font-light, Cormorant</p>
       </div>
       <div>
         <Heading variant="h2">Heading 2 - Premium Chocolate</Heading>
-        <p className="text-sm text-text/70">67px, font-light, Cormorant</p>
+        <p className="text-text/70 text-sm">67px, font-light, Cormorant</p>
       </div>
       <div>
         <Heading variant="h3">Heading 3 - Our Collection</Heading>
-        <p className="text-sm text-text/70">38px, font-normal, Cormorant</p>
+        <p className="text-text/70 text-sm">38px, font-normal, Cormorant</p>
       </div>
       <div>
         <Heading variant="h4">Heading 4 - Featured Products</Heading>
-        <p className="text-sm text-text/70">33px, font-medium, Cormorant</p>
+        <p className="text-text/70 text-sm">33px, font-medium, Cormorant</p>
       </div>
       <div>
         <Heading variant="h5">Heading 5 - Categories</Heading>
-        <p className="text-sm text-text/70">27px, font-medium, Cormorant</p>
+        <p className="text-text/70 text-sm">27px, font-medium, Cormorant</p>
       </div>
       <div>
         <Heading variant="h6">Heading 6 - Product Details</Heading>
-        <p className="text-sm text-text/70">21px, font-semibold, Cormorant</p>
+        <p className="text-text/70 text-sm">21px, font-semibold, Cormorant</p>
       </div>
     </div>
   ),
