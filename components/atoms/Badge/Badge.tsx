@@ -11,9 +11,9 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default: 'text-[#3f3930]',
-        sale: 'text-accent',
-        new: 'text-gold',
-        hot: 'text-accent',
+        sale: 'text-[#ee2852]',
+        new: 'text-[#a7760c]',
+        hot: 'text-[#ee2852]',
       },
     },
     defaultVariants: {
