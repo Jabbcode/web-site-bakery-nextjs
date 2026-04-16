@@ -1,6 +1,7 @@
 'use client'
 
 import { Component, type ErrorInfo, type ReactNode } from 'react'
+import Link from 'next/link'
 import { AlertTriangle, RefreshCw, Home } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -86,7 +87,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
               <div>
                 <h1 className="font-display text-h4 text-[#241c10]">Oops! Something went wrong</h1>
                 <p className="mt-1 text-[#63605a]">
-                  We're sorry, but something unexpected happened.
+                  We&apos;re sorry, but something unexpected happened.
                 </p>
               </div>
             </div>
@@ -124,7 +125,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
                 Try Again
               </button>
 
-              <a
+              <Link
                 href="/"
                 className={cn(
                   'inline-flex items-center justify-center gap-2 border border-[#dadada] bg-white px-6 py-3',
@@ -135,7 +136,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
               >
                 <Home className="h-4 w-4" />
                 Go Home
-              </a>
+              </Link>
             </div>
 
             {process.env.NODE_ENV === 'development' && (

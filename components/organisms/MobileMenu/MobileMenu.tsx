@@ -27,6 +27,8 @@ export const MobileMenu = ({ items = defaultNavItems, className }: MobileMenuPro
 
   // Close menu when route changes
   useEffect(() => {
+    // This is intentional - we want to close the menu on navigation
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsOpen(false)
     setExpandedItems([])
   }, [pathname])
