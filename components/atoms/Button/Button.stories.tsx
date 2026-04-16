@@ -12,7 +12,7 @@ const meta = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['primary', 'secondary', 'outline', 'ghost', 'link', 'danger'],
+      options: ['default', 'primary', 'secondary', 'light', 'danger'],
     },
     size: {
       control: 'select',
@@ -33,6 +33,13 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
+export const Default: Story = {
+  args: {
+    variant: 'default',
+    children: 'Default Button',
+  },
+}
+
 export const Primary: Story = {
   args: {
     variant: 'primary',
@@ -47,24 +54,10 @@ export const Secondary: Story = {
   },
 }
 
-export const Outline: Story = {
+export const Light: Story = {
   args: {
-    variant: 'outline',
-    children: 'Outline Button',
-  },
-}
-
-export const Ghost: Story = {
-  args: {
-    variant: 'ghost',
-    children: 'Ghost Button',
-  },
-}
-
-export const Link: Story = {
-  args: {
-    variant: 'link',
-    children: 'Link Button',
+    variant: 'light',
+    children: 'Light Button',
   },
 }
 
@@ -113,7 +106,7 @@ export const Disabled: Story = {
 export const WithIconLeft: Story = {
   args: {
     children: 'Add to Cart',
-    icon: ShoppingCart({ className: 'h-4 w-4' }),
+    icon: <ShoppingCart className="h-4 w-4" />,
     iconPosition: 'left',
   },
 }
@@ -121,7 +114,7 @@ export const WithIconLeft: Story = {
 export const WithIconRight: Story = {
   args: {
     children: 'Add to Favorites',
-    icon: Heart({ className: 'h-4 w-4' }),
+    icon: <Heart className="h-4 w-4" />,
     iconPosition: 'right',
   },
 }
@@ -138,23 +131,31 @@ export const FullWidth: Story = {
 
 export const AllVariants: Story = {
   render: () => (
-    <div className="flex flex-col gap-4">
-      <div className="flex gap-2">
-        <Button variant="primary">Primary</Button>
-        <Button variant="secondary">Secondary</Button>
-        <Button variant="outline">Outline</Button>
-        <Button variant="ghost">Ghost</Button>
-        <Button variant="link">Link</Button>
-        <Button variant="danger">Danger</Button>
+    <div className="flex flex-col gap-6 p-8">
+      <div>
+        <h3 className="mb-4 text-sm font-medium text-dark">Variants</h3>
+        <div className="flex flex-wrap gap-3">
+          <Button variant="default">Default</Button>
+          <Button variant="primary">Primary</Button>
+          <Button variant="secondary">Secondary</Button>
+          <Button variant="light">Light</Button>
+          <Button variant="danger">Danger</Button>
+        </div>
       </div>
-      <div className="flex gap-2">
-        <Button size="sm">Small</Button>
-        <Button size="md">Medium</Button>
-        <Button size="lg">Large</Button>
+      <div>
+        <h3 className="mb-4 text-sm font-medium text-dark">Sizes</h3>
+        <div className="flex items-center gap-3">
+          <Button size="sm">Small</Button>
+          <Button size="md">Medium</Button>
+          <Button size="lg">Large</Button>
+        </div>
       </div>
-      <div className="flex gap-2">
-        <Button isLoading>Loading</Button>
-        <Button disabled>Disabled</Button>
+      <div>
+        <h3 className="mb-4 text-sm font-medium text-dark">States</h3>
+        <div className="flex gap-3">
+          <Button isLoading>Loading</Button>
+          <Button disabled>Disabled</Button>
+        </div>
       </div>
     </div>
   ),

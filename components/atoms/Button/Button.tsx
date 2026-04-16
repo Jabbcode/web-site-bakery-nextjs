@@ -6,28 +6,34 @@ import { Loader2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2 rounded-md font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  // Base styles - EXACTO SwissDelight .qodef-theme-button
+  'relative inline-flex items-center justify-center gap-2 w-auto font-body font-normal no-underline uppercase cursor-pointer transition-[color,background-color,border-color] duration-[200ms] ease-out disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
-        primary: 'bg-dark text-white hover:bg-dark/90 active:bg-dark/80',
-        secondary: 'bg-primary text-white hover:bg-primary-hover active:bg-primary/80',
-        outline: 'border-2 border-dark text-dark hover:bg-dark hover:text-white active:bg-dark/90',
-        ghost: 'text-dark hover:bg-light active:bg-border',
-        link: 'text-dark underline-offset-4 hover:underline',
-        danger: 'bg-accent text-white hover:bg-accent-hover active:bg-accent/80',
+        // Default: transparent con borde semi-transparente (estilo principal SwissDelight)
+        default: 'text-dark bg-transparent border border-[rgba(36,28,16,0.4)] hover:bg-transparent',
+        // Primary: fondo oscuro
+        primary: 'text-white bg-dark border border-dark hover:bg-dark/90',
+        // Secondary: fondo primary color
+        secondary: 'text-white bg-primary border border-primary hover:bg-primary/90',
+        // Light: fondo claro
+        light: 'text-dark bg-white border border-border hover:bg-light',
+        // Danger: fondo accent
+        danger: 'text-white bg-accent border border-accent hover:bg-accent/90',
       },
       size: {
-        sm: 'h-9 px-3 text-sm',
-        md: 'h-11 px-6 text-base',
-        lg: 'h-13 px-8 text-lg',
+        // EXACTO de SwissDelight: padding 13px 38px 12px
+        sm: 'text-[11px] leading-[2em] tracking-[0.15em] pt-[11px] px-[30px] pb-[10px]',
+        md: 'text-[13px] leading-[2em] tracking-[0.15em] pt-[13px] px-[38px] pb-[12px]',
+        lg: 'text-[15px] leading-[2em] tracking-[0.15em] pt-[15px] px-[46px] pb-[14px]',
       },
       fullWidth: {
         true: 'w-full',
       },
     },
     defaultVariants: {
-      variant: 'primary',
+      variant: 'default',
       size: 'md',
       fullWidth: false,
     },

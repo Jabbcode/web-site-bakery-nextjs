@@ -1,0 +1,100 @@
+import type { Meta, StoryObj } from '@storybook/react'
+import { Spinner } from './Spinner'
+
+const meta = {
+  title: 'Atoms/Spinner',
+  component: Spinner,
+  parameters: {
+    layout: 'centered',
+  },
+  tags: ['autodocs'],
+  argTypes: {
+    size: {
+      control: 'select',
+      options: ['sm', 'md', 'lg'],
+    },
+    variant: {
+      control: 'select',
+      options: ['primary', 'dark', 'accent', 'light'],
+    },
+  },
+} satisfies Meta<typeof Spinner>
+
+export default meta
+type Story = StoryObj<typeof meta>
+
+export const Default: Story = {
+  args: {},
+}
+
+export const Primary: Story = {
+  args: {
+    variant: 'primary',
+  },
+}
+
+export const Dark: Story = {
+  args: {
+    variant: 'dark',
+  },
+}
+
+export const Accent: Story = {
+  args: {
+    variant: 'accent',
+  },
+}
+
+export const Small: Story = {
+  args: {
+    size: 'sm',
+  },
+}
+
+export const Medium: Story = {
+  args: {
+    size: 'md',
+  },
+}
+
+export const Large: Story = {
+  args: {
+    size: 'lg',
+  },
+}
+
+export const AllVariants: Story = {
+  render: () => (
+    <div className="flex flex-col gap-8 p-8">
+      <div>
+        <h3 className="mb-4 text-sm font-medium text-dark">Sizes</h3>
+        <div className="flex items-center gap-6">
+          <Spinner size="sm" />
+          <Spinner size="md" />
+          <Spinner size="lg" />
+        </div>
+      </div>
+      <div>
+        <h3 className="mb-4 text-sm font-medium text-dark">Variants</h3>
+        <div className="flex items-center gap-6">
+          <Spinner variant="primary" />
+          <Spinner variant="dark" />
+          <Spinner variant="accent" />
+          <Spinner variant="light" />
+        </div>
+      </div>
+      <div>
+        <h3 className="mb-4 text-sm font-medium text-dark">In Context</h3>
+        <div className="flex flex-col gap-4">
+          <div className="flex items-center gap-2">
+            <Spinner size="sm" />
+            <span className="text-text">Loading...</span>
+          </div>
+          <div className="flex h-32 w-64 items-center justify-center bg-cream">
+            <Spinner />
+          </div>
+        </div>
+      </div>
+    </div>
+  ),
+}
