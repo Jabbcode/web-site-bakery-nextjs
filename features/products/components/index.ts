@@ -1,3 +1,5 @@
 export { ProductFilters, type ProductFiltersProps, type FilterOption } from './ProductFilters'
 export { ProductSort, type ProductSortProps, type SortOption } from './ProductSort'
 export { RelatedProducts, type RelatedProductsProps } from './RelatedProducts'
+export { ProductGallery, type ProductGalleryProps, type ProductImage } from './ProductGallery'
+export { ProductTabs, type ProductTabsProps, type ProductTab } from './ProductTabs'
